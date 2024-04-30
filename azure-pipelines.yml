@@ -6,6 +6,9 @@
 trigger:
 - master
 
+pool:
+  vmImage: ubuntu-latest
+  
 steps:
 - task: NodeTool@0
   inputs:
@@ -17,6 +20,7 @@ steps:
     npm run build
   displayName: 'npm install and build VP'
   condition: 
+  
 - task: CopyFiles@2
   displayName: 'Copying files from dist folder'
   inputs:
